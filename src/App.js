@@ -1,5 +1,5 @@
 import {  Chat, HomeRounded, ListAlt, } from '@mui/icons-material';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import Header from './Components/Header';
 import MenuContainer from './Components/MenuContainer';
@@ -11,13 +11,19 @@ import { MenuItems, Items} from './Components/Data';
 import ItemCard from './Components/ItemCard';
 
 function App() {
+  //maindish state
+  const [isMainData, setMainData] = useState(
+    Items.filter((element) => element.itemId === "0" )
+  );
   useEffect(() => {
     const menuLi = document.querySelectorAll("#menu li");
     function setMenuActive() {
       menuLi.forEach((n) => n.classList.remove("active"));
       this.classList.add("active");
     }
+
     menuLi.forEach((n) => n.addEventListener("click", setMenuActive));
+
    //for rowmenucontainer changer//
    const menuCard = document
       .querySelector(".rowContainer")
@@ -27,7 +33,11 @@ function App() {
         this.classList.add("active")
       }
     menuCard.forEach((n) => n.addEventListener("click", setMenuCardActive));
-  }, []);
+  }, [isMainData]);
+//set the shop info
+  const setData = (itemId) => {
+    setMainData(Items.filter((element) => element.itemId == itemId));
+  };
 
   return (
     <div className="App">
@@ -65,7 +75,7 @@ function App() {
                 <div className="rowContainer">
                   {MenuItems && 
                     MenuItems.map(data => (
-                    <div key={data.id}>
+                    <div key={data.id} onClick={() => setData(data.itemId)} >
                       <MenuCard imgSrc={data.imgSrc} 
                       name={data.name}
                       isActive={data.id === 0 ? true : false}
@@ -74,12 +84,19 @@ function App() {
                   ))}
                 </div>
                 <div className="dishItemContainer">
-                  <ItemCard imgSrc={"https://firebasestorage.googleapis.com/v0/b/laundry-app-5ccdc.appspot.com/o/branch2.jpg?alt=media&token=0587d7eb-7cb3-41e2-9f37-c606a6945259"}
-                  name={"Shop1"}
-                  time={"Open Everyday from 8:00 AM to 10:00 PM"}
-                  description={" pwede magpalaba dito"}
-                  terms={"mga conditions"}
-                  />
+                  {
+                    isMainData && isMainData.map((data) => (
+                      <ItemCard
+                        key={data.id}
+                        imgSrc={data.imgSrc}
+                        name={data.name}
+                        time={data.time}
+                        description={data.description}
+                        terms={data.terms}
+                       />
+                    ))
+                  }
+
                 </div>
               </div>
         </div>

@@ -2,26 +2,26 @@
 const MenuItems = [
     {
       id: 1,
-      itemId: "Lalaba",
-      name: "Laundry Shop 1",
+      itemId: "Shop1",
+      name: "Malinis Laundry  shop",
       imgSrc:
         "https://firebasestorage.googleapis.com/v0/b/laundry-app-5ccdc.appspot.com/o/clothes%20washing.png?alt=media&token=759171b9-38f4-42be-bd3d-dadd792eaa6d",
     },
     {
       id: 2,
-      itemId: "DryC",
-      name: "Laundry Shop 2",
+      itemId: "Shop2",
+      name: "Damit mo Laba ko",
       imgSrc:
         "https://firebasestorage.googleapis.com/v0/b/laundry-app-5ccdc.appspot.com/o/clothes.png?alt=media&token=61d8c88d-69bf-43c5-833d-47e13e8b4d2f",
     },
-    {
+   /* {
       id: 3,
       itemId: "Beddings",
       name: "Laundry Shop 3",
       imgSrc:
         "https://firebasestorage.googleapis.com/v0/b/laundry-app-5ccdc.appspot.com/o/warm%20machine.png?alt=media&token=8bf2102b-7f11-45e9-a8ba-ee255b3a1419",
     },
-    /*{
+    {
       id: 4,
       itemId: "taco01",
       name: "Taco",
@@ -47,22 +47,23 @@ const MenuItems = [
   const Items = [
     {
       id: 1,
-      itemId: "buger01",
-      imgSrc:
-        "https://firebasestorage.googleapis.com/v0/b/food-delivery-37c59.appspot.com/o/Images%2Fburger1.png?alt=media&token=319dfbe9-462b-46ea-8f38-6ca7a20319e0",
-      name: "Burger Bistro",
-      ratings: 5,
-      price: "7.5",
+      itemId: "Shop1",
+      imgSrc:"https://firebasestorage.googleapis.com/v0/b/laundry-app-5ccdc.appspot.com/o/branch2.jpg?alt=media&token=0587d7eb-7cb3-41e2-9f37-c606a6945259",
+      name:"Malinis Laundry  shop",
+      time:"Open Everyday from 8:00 AM to 10:00 PM",
+      description:" pwede magpalaba dito",
+      terms:"mga conditions",
     },
     {
-      id: 2,
-      itemId: "buger01",
-      imgSrc:
-        "https://firebasestorage.googleapis.com/v0/b/food-delivery-37c59.appspot.com/o/Images%2Fburger2.png?alt=media&token=b256ed7a-fe35-4051-9bf5-24f39b79f2b2",
-      name: "Smokin' Burger",
-      ratings: 5,
-      price: "12",
+      id: 1,
+      itemId: "Shop2",
+      imgSrc:"https://firebasestorage.googleapis.com/v0/b/laundry-app-5ccdc.appspot.com/o/branch1.png?alt=media&token=c551ff01-29f3-424f-9fc4-22f3917146bf",
+      name:"Damit mo Laba ko",
+      time:"Open Everyday from 7:00 AM to 10:00 PM",
+      description:" pwede magpalaba dito kapag mabaho",
+      terms:"mga conditions at mga bawal",
     },
+    /*
     {
       id: 3,
       itemId: "buger01",
@@ -693,7 +694,7 @@ const MenuItems = [
       name: "Soft Drinks",
       ratings: 4,
       price: "7.5",
-    },
+    },*/
   ];
   
   export { MenuItems, Items };
