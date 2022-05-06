@@ -70,38 +70,39 @@ function App() {
         <div className="mainContainer"> 
           {/*Banner*/}
             <div className="banner">
-                <BannerName name={"Juan"} discount={"100"} link={"#"} />
-                <img src={discountPic}
-                  alt=""
-                  className="discountPic"
-                />
+              <BannerName name={"Juan"} discount={"100"} link={"#"} />
+              <img src={discountPic}
+                alt=""
+                className="discountPic"
+              />
+            </div>
+
+            {/*dish container */}
+            <div className="dishContainer">
+              <div className="menuCard">
+                <SubMenuContainer name={"Laundry Shops Available"}/>
+
               </div>
 
-              {/*dish container */}
-              <div className="dishContainer">
-                <div className="menuCard">
-                  <SubMenuContainer name={"Laundry Shops Available"}/>
+              <div className="rowContainer">
+                {MenuItems && 
+                  MenuItems.map(data => (
+                  <div key={data.id}>
+                    <MenuCard imgSrc={data.imgSrc} 
+                    name={data.name}
+                    isActive={data.id == 1 ? true : false}
+                    />
 
-                  </div>
-                <div className="rowContainer">
-                  {MenuItems && 
-                    MenuItems.map(data => (
-                    <div key={data.id}>
-                      <MenuCard imgSrc={data.imgSrc} 
-                      name={data.name}
-                      isActive={data.id == 1 ? true : false}
-                      />
+                  </div> 
+                ))}
 
-                    </div> 
-                  ))}
-
-                </div>
-                 
-
-
-
-                <div className="dishItemContainer"></div>
               </div>
+                
+
+
+
+              <div className="dishItemContainer"></div>
+            </div>
         </div>
         <div className="rightMenu"></div>
       </main>
